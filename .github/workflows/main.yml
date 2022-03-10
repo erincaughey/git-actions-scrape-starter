@@ -51,7 +51,7 @@ jobs:
                 "value": "https://github.com/${{github.repository}}/commits"
               }
               ]
-            }
+        ]
     - name: Slack Notification on FAILURE
       if: failure()
       uses: tokorom/action-slack-incoming-webhook@main
@@ -72,5 +72,5 @@ jobs:
                 }
             ]
             }
-          ]        
+        ]        
     
