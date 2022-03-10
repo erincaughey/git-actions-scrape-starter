@@ -22,7 +22,8 @@ jobs:
     - name: Add and commit 
       run: |-
         git add .
-        git status
+        git config user.name "Automated"	
+        git config user.email "actions@users.noreply.github.com"
         git commit -m "Latest data"
     - name: Push
       run: git push
