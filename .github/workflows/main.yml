@@ -2,7 +2,7 @@ name: Scrape
 
 on:
   schedule:
-    - cron: "*/5 * * * *" #every 5 minutes
+    - cron: "*/10 * * * *" #every 5 minutes
   workflow_dispatch:
 
 jobs: 
@@ -19,11 +19,12 @@ jobs:
     - run: pipenv install --python `which python`
     - name: Run scraper
       run: pipenv run jupyter execute mpd_cad_scrape.ipynb
-    - name: Add and commit 
-      run: |-
-        git add .
-        git config user.name "Automated"	
-        git config user.email "actions@users.noreply.github.com"
-        git commit -m "Latest data"
+    - name: Add and commit
+      id: add_commit
+      uses: EndBug/add-and-commit@v8
+      with:
+        committer_name: Automated
+        committer_email: actions@users.noreply.github.com
+        message: "Latest data"
     - name: Push
       run: git push
