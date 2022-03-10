@@ -2,7 +2,7 @@ name: Scrape
 
 on:
   schedule:
-    - cron: "*/10 * * * *" #every 5 minutes
+    - cron: "* */1 * * *" #every 5 minutes
   workflow_dispatch:
 
 jobs: 
@@ -34,12 +34,12 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: A successful scrape!
+        text: MPD calls for service successfully downloaded.
     - name: Slack Notification on FAILURE
       if: failure()
       uses: tokorom/action-slack-incoming-webhook@main
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: Something went wrong.       
+        text: MPD calls for service scrape failed @ecaughey
     
