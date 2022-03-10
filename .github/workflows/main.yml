@@ -18,5 +18,5 @@ jobs:
         cache: 'pipenv'
     - run: pipenv install --python `which python`
     - name: Run scraper
-      run: pipenv run jupyter execute mpd_cad_scrape.ipynb
+      run: pipenv run jupyter execute example_scrape/mpd_cad_scrape.ipynb
       
