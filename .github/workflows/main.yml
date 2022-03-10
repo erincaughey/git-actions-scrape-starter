@@ -37,20 +37,21 @@ jobs:
         text: A successful scrape!
         attachments: |
         [
+          {
+          "color": "good",
+          "author_name": "${{ github.actor }}",
+          "author_icon": "${{ github.event.sender.avatar_url }}",
+          "fields": [
             {
-            "color": "good",
-            "author_name": "${{ github.actor }}",
-            "author_icon": "${{ github.event.sender.avatar_url }}",
-            "fields": [
-                {
-                "title": "GitHub Actions URL",
-                "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-                },
-                {
-                "title": "Commit URL",
-                "value": "https://github.com/${{github.repository}}/commits"
-              }
-              ]
+            "title": "GitHub Actions URL",
+            "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+            },
+            {
+            "title": "Commit URL",
+            "value": "https://github.com/${{github.repository}}/commits"
+            }
+          ]
+          }
         ]
     - name: Slack Notification on FAILURE
       if: failure()
@@ -61,16 +62,16 @@ jobs:
         text: Something went wrong.
         attachments: |
         [
+          {
+          "color": "bad",
+          "author_name": "${{ github.actor }}",
+          "author_icon": "${{ github.event.sender.avatar_url }}",
+          "fields": [
             {
-            "color": "bad",
-            "author_name": "${{ github.actor }}",
-            "author_icon": "${{ github.event.sender.avatar_url }}",
-            "fields": [
-                {
-                "title": "GitHub Actions URL",
-                "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-                }
-            ]
+            "title": "GitHub Actions URL",
+            "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
             }
+          ]
+          }
         ]        
     
