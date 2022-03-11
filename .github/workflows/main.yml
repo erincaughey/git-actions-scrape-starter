@@ -41,19 +41,5 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: Scrape failed
-        attachments: |
-        [
-          {
-            "color": "bad",
-            "author_name": "${{ github.actor }}",
-            "author_icon": "${{ github.event.sender.avatar_url }}",
-            "fields": [
-              {
-                "title": "GitHub Actions URL",
-                "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-              }
-            ]
-          }
-        ]
+        text: ':red-card: Scrape failed'
     
