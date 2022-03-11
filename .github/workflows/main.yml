@@ -2,7 +2,7 @@ name: Scrape
 
 on:
   schedule:
-    - cron: "* */1 * * *" #every 5 minutes
+    - cron: "0 */1 * * *" #top of every hour
   workflow_dispatch:
 
 jobs: 
@@ -41,5 +41,19 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: MPD calls for service scrape failed @ecaughey
+        text: Scrape failed
+        attachments: |
+        [
+          {
+            "color": "bad",
+            "author_name": "${{ github.actor }}",
+            "author_icon": "${{ github.event.sender.avatar_url }}",
+            "fields": [
+              {
+                "title": "GitHub Actions URL",
+                "value": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+              }
+            ]
+          }
+        ]
     
