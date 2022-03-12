@@ -13,7 +13,7 @@
 + MG - Municipal Garage
 + ID - Identification Division
 
-==========
+-----
 
 **Issues to fix:**
 
@@ -24,7 +24,7 @@
 Modify script to add new scraped data to the bottom of the previouse saved table and clean for duplicates. Run the script more frequently than once an hour to account for missing calls that could get removed.
 
 
-==========
+-----
 
 
 Based on this NICAR tutorial: [https://palewi.re/docs/first-github-scraper/index.html](https://palewi.re/docs/first-github-scraper/index.html)
