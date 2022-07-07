@@ -49,8 +49,8 @@ project-state:
 
 dependencies: 
 	brew install make
-	brew install rename
 	brew install gdal
+	brew install rename
 	npm install -g mapshaper
 
 
