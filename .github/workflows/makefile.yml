@@ -11,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    # - name: dependencies
-    #   run: make dependencies
+    - name: dependencies
+      run: make dependencies
     
     # - name: download data
     #   run: make download
