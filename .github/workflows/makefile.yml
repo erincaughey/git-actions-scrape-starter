@@ -2,7 +2,7 @@ name: Makefile CI
 
 on:
   #schedule:
-    #- cron: "0 */1 * * *" #top of every hour
+    #- cron: "0 12 * * 2" #every 12th hour on the second day of the week (noon every tuesday)
   workflow_dispatch:
 
 jobs: 
