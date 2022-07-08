@@ -13,14 +13,6 @@ jobs:
     
     - name: dependencies
       run: make dependencies
-    
-    #works
-    # - name: download data
-    #   run: make download
-
-    #works
-    # - name: filter through mapshaper
-    #   run: make filter-data
 
     - name: run full script
       run: make update
@@ -34,3 +26,18 @@ jobs:
         message: "Data Updated"
     - name: Push	
       run: git push
+
+
+  # need to add all AWS keys to secrets (settings > secrets > actions)
+  # upload:
+  #   needs: scrape
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - uses: shallwefootball/upload-s3-action@master
+  #       with:
+  #         aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+  #         aws_bucket: ${{ secrets.AWS_S3_BUCKET }}
+  #         source_dir: 'data/final'
+  #         destination_dir: 'project-feeds'
