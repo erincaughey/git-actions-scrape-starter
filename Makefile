@@ -1,4 +1,9 @@
-override date ?= ERROR: open the data/drought folder and run `make date=dateinfilename` i.e. date=20220614
+# use override date variable and run `make date=[date-in-20220705-format]` to do script in command line. 
+# otherwise change the date at the top of this makefile to match the current and just run `make update`
+# current download matches the date below this table https://droughtmonitor.unl.edu/DmData/GISData.aspx
+
+# override date ?= ERROR: open the data/drought folder and run `make date=dateinfilename` i.e. date=20220614
+date=20220705
 
 update: filter-data ca-drought bay-area-drought
 

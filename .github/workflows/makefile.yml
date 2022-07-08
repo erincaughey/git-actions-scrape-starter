@@ -14,11 +14,16 @@ jobs:
     - name: dependencies
       run: make dependencies
     
+    #works
     # - name: download data
     #   run: make download
 
-    - name: filter through mapshaper
-      run: make filter-data
+    #works
+    # - name: filter through mapshaper
+    #   run: make filter-data
+
+    - name: run full script
+      run: make update
 
     - name: Add and commit
       id: add_commit
