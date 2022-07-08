@@ -1,7 +1,7 @@
 name: Scrape
 
 on:
-  schedule:
+  #schedule:
     #- cron: "0 */1 * * *" #top of every hour
   workflow_dispatch:
 

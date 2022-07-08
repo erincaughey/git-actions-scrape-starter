@@ -50,6 +50,7 @@ project-state:
 dependencies: 
 	brew install make
 	brew install gdal
+	brew unlink util-linux
 	brew install rename
 	npm install -g mapshaper
 
